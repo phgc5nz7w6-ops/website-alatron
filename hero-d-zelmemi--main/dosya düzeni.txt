@@ -1,0 +1,60 @@
+alatron/
+│
+├── index.html
+├── hizmetler.html
+├── projeler.html
+├── urunler.html
+├── iletisim.html
+│
+├── css/
+│   ├── style.css
+│   └── responsive.css
+│
+├── js/
+│   └── main.js
+│
+├── images/
+│   ├── logo.png               (Google ve site logosu - büyük, renkli)
+│   ├── sekme.png              (SEKME simgesi - küçük, şeffaf, 32x32)
+│   ├── hero-bg.jpg
+│   ├── team.jpg
+│   ├── placeholder.jpg
+│   ├── elektrik1.jpg
+│   ├── elektrik2.jpg
+│   ├── insaat1.jpg
+│   ├── insaat2.jpg
+│   ├── taahut1.jpg
+│   ├── taahut2.jpg
+│   ├── madencilik1.jpg
+│   ├── madencilik2.jpg
+│   │
+│   ├── management/
+│   │   ├── gokhan-ocak.jpg
+│   │   ├── bilgesu-ocak.jpg
+│   │   ├── sena-ocak.jpg
+│   │   └── berke-ocak.jpg
+│   │
+│   └── reference/
+│       ├── logo1.png
+│       ├── logo2.png
+│       ├── logo3.png
+│       ├── logo4.png
+│       ├── logo5.png
+│       └── logo6.png
+│
+├── icon/                      ← EKLENDİ
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
+│   ├── site.webmanifest
+│   └── fontawesome.min.css    (varsa)
+│
+├── proje-detay/
+│   ├── elektrik-kule.html
+│   ├── ticari-bina.html
+│   └── ...
+│
+└── urun-detay/
+    ├── transformator.html
+    └── ...

@@ -1,0 +1,478 @@
+/* ========================================
+   ALATRON - RESPONSIVE TASARIM
+   (style.css ile uyumlu, navbar şeffaflık korunuyor)
+   ======================================== */
+
+/* ========== TABLET (max-width: 1024px) ========== */
+@media (max-width: 1024px) {
+    .container { padding: 0 24px; }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.1rem; }
+
+    .nav-menu { gap: 20px; }
+    .nav-menu a { font-size: 0.8rem; }
+
+    .hero { min-height: 600px; }
+    .hero-content h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+
+    .hero-stats-inner {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 24px;
+    }
+
+    .hero-stat-num { font-size: 1.6rem; }
+    .hero-stat-label { font-size: 0.65rem; }
+
+    .about-grid,
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+    .management-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+    .advantages-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .products-detailed-grid { grid-template-columns: 1fr; }
+
+    .service-block,
+    .project-detailed-card { grid-template-columns: 1fr; gap: 0; }
+
+    .service-block.reverse,
+    .project-detailed-card.reverse { direction: ltr; }
+
+    .service-block.reverse .service-block-content,
+    .project-detailed-card.reverse .project-detailed-content { direction: ltr; }
+
+    .project-detailed-content,
+    .project-detailed-card.reverse .project-detailed-content { padding: 30px; }
+
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+
+    .footer { padding: 60px 0 24px; }
+
+    .slider-wrapper { padding: 0 50px; }
+
+    .ref-card { min-width: calc(50% - 15px); height: 100px; }
+
+    .service-features { grid-template-columns: 1fr; }
+
+    .contact-flex { flex-direction: column; }
+
+    .phone-card { width: 100%; justify-content: flex-start; }
+
+    .section-header { margin-bottom: 50px; }
+
+    /* MANAGEMENT PHILOSOPHY TABLET */
+    .management-philosophy {
+        grid-template-columns: 130px 1fr;
+    }
+    .management-philosophy-icon {
+        padding: 36px 20px;
+    }
+    .management-philosophy-icon i {
+        width: 64px;
+        height: 64px;
+        font-size: 2rem;
+    }
+    .management-philosophy-text {
+        padding: 36px 36px;
+    }
+
+    .about, .services-home, .projects-home,
+    .gallery-section, .why-us, .contact-home { padding: 80px 0; }
+}
+
+/* ========== MOBİL (max-width: 768px) ========== */
+@media (max-width: 768px) {
+    .container { padding: 0 16px; }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1rem; }
+    body { font-size: 14px; }
+
+    /* NAVBAR - ana sayfada şeffaflık korunsun */
+    .navbar {
+        padding: 12px 0;
+    }
+    /* Anasayfada şeffaf navbar */
+    body.home .navbar {
+        background: transparent !important;
+        padding: 20px 0;
+        box-shadow: none;
+    }
+    body.home .navbar.scrolled {
+        background: linear-gradient(135deg, #1e4d7b, #0a1628) !important;
+        backdrop-filter: blur(12px); /* eksik blur eklendi */
+        -webkit-backdrop-filter: blur(12px);
+        padding: 8px 0;
+    }
+    /* Diğer sayfalarda navbar koyu */
+    body:not(.home) .navbar {
+        background: linear-gradient(135deg, #1e4d7b, #0a1628) !important;
+    }
+
+    .logo-img {
+        width: 44px;
+        height: 44px;
+        transition: all 0.4s ease; /* smooth geçiş eklendi */
+    }
+    .logo-text { font-size: 1.3rem; }
+
+    /* Mobil menü - arka plan rengi sabit */
+    .nav-menu {
+        position: fixed;
+        top: 71px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #0a1628;
+        max-height: calc(100vh - 71px);
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 20px 0;
+        align-items: flex-start;
+    }
+    body.home .nav-menu {
+        background: #0a1628; /* Mobil menü açıldığında koyu olsun */
+    }
+    .nav-menu.active { transform: translateX(0); }
+
+    .nav-menu li { width: 100%; padding: 0 24px; }
+
+    .nav-menu a {
+        display: block;
+        padding: 14px 0;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        letter-spacing: 0.5px;
+    }
+
+    .nav-menu a::after { display: none; }
+
+    .nav-menu li:last-child a { border-bottom: none; }
+
+    .btn-cta {
+        width: calc(100% - 48px);
+        text-align: center;
+        margin: 12px 24px;
+    }
+
+    .mobile-menu-btn { display: flex; }
+
+ /* ================================================================
+    HERO MOBİL - KÖK ÇÖZÜM
+    Sorun analizi:
+    - Android Chrome: 100vh adres çubuğunu hesaba katmaz → dvh
+    - iOS Safari: fixed konumlu elemanlar scroll'da titrer → absolute
+    - Görsel "yakın": object-position yanlış, mobilde 50% 30% daha iyi
+    - "Alt görünmüyor": padding-bottom yetersiz, stats bar overflow
+    ================================================================ */
+    .hero {
+        /* dvh: Android Chrome'da viewport yüksekliği adres çubuğu dahil */
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: auto;
+        /* İçeriği dikeyde ortala, stats bar için altta yer bırak */
+        padding-top: 100px;
+        padding-bottom: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Görsel kapsayıcı - absolute, overflow:hidden parent'tan alır */
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /*
+     * MOBİL GÖRSEL STRATEJİSİ:
+     * object-position: center 30%
+     * → Görselin üst 1/3'ü viewport'ta → logo/kule görünür
+     * → "Yakınlaşmış" hissi gider çünkü görsel üstten başlar
+     * will-change: transform → Android GPU render
+     */
+    .hero-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+        object-position: center 30%; /* ← Mobil için kritik: üstten %30 */
+        -o-object-position: center 30%;
+        display: block;
+        will-change: transform;
+        /* Android'de bazı tarayıcılar img'yi inline gibi render eder */
+        vertical-align: top;
+    }
+
+    /* Stats bar mobilde de absolute bottom */
+    .hero-stats {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 14px 0;
+        background: rgba(10,22,40,0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero-stats-inner {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0;
+    }
+
+    .hero-stat-item {
+        padding: 8px 10px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-stat-item:nth-child(2) { border-right: none; }
+
+    .hero-stat-item:nth-child(1),
+    .hero-stat-item:nth-child(2) {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.08); }
+    .hero-stat-item:nth-child(4) { border-right: none; }
+
+    .hero-stat-num { font-size: 1.5rem; }
+    .hero-stat-label { font-size: 0.62rem; }
+
+    .scroll-down { display: none !important; }
+
+    .hero-content h1 {
+        font-size: clamp(1.7rem, 7vw, 2.2rem) !important;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    /* PAGE HEADER */
+    .page-header { padding: 110px 0 50px; }
+    .page-header h1 { font-size: 2.2rem; }
+
+    /* SECTIONS */
+    .section-header { margin-bottom: 40px; }
+    .about, .services-home, .projects-home,
+    .gallery-section, .why-us, .contact-home,
+    .services-detailed, .projects-detailed { padding: 60px 0; }
+
+    /* ABOUT */
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat { padding: 16px; }
+    .stat-num { font-size: 1.6rem; }
+
+    /* MANAGEMENT PHILOSOPHY MOBİL */
+    .management-philosophy {
+        grid-template-columns: 1fr; /* Tek sütun */
+        border-image: none;
+        border-top: 3px solid var(--accent-blue);
+    }
+    .management-philosophy-icon {
+        padding: 30px 24px 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(45,139,204,0.20);
+        flex-direction: row;
+        gap: 16px;
+        justify-content: flex-start;
+    }
+    .management-philosophy-icon i {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+    .management-philosophy-icon span { text-align: left; }
+    .management-philosophy-text {
+        padding: 24px 28px 32px;
+    }
+    .management-philosophy-text h3 { font-size: 1.7rem; }
+    .management-philosophy-text p { font-size: 0.9rem; }
+
+    /* MANAGEMENT */
+    .management-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .management-image { aspect-ratio: 1; min-height: 150px; }
+    .management-card { padding-bottom: 14px; }
+    .management-card h4 { font-size: 0.9rem; margin: 12px 8px 4px; }
+    .management-title-text { font-size: 0.7rem; padding: 0 8px; }
+    .management-philosophy { padding: 30px 24px; }
+    .management-philosophy h3 { font-size: 1.3rem; }
+    .management-philosophy p { font-size: 0.85rem; }
+
+    /* SERVICES */
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .service-card { padding: 28px 20px; }
+
+    /* PROJECTS */
+    .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+    .project-card { aspect-ratio: 16/10; min-height: 200px; }
+
+    .project-detailed-card { grid-template-columns: 1fr; }
+    .project-detailed-card.reverse { direction: ltr; }
+    .project-detailed-image { min-height: 250px; }
+    .project-detailed-content,
+    .project-detailed-card.reverse .project-detailed-content { padding: 24px 20px; }
+
+    /* GALLERY */
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    /* WHY US */
+    .advantages-grid { grid-template-columns: 1fr; gap: 16px; }
+    .advantage-item { padding: 24px 20px; }
+
+    /* REFERENCES */
+    .references-section { padding: 60px 0; }
+    .slider-wrapper { padding: 0 36px; }
+    .ref-card { min-width: calc(100% - 60px); height: 90px; }
+    .nav-btn { width: 34px; height: 34px; }
+
+    /* CONTACT HOME */
+    .contact-flex { flex-direction: column; padding: 32px 24px; gap: 24px; }
+    .contact-text h2 { font-size: 1.8rem; }
+    .phone-card { width: 100%; min-width: unset; padding: 20px; }
+
+    /* SERVICE BLOCK */
+    .service-block, .project-detailed-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    .service-block-image, .project-detailed-image { min-height: 260px; }
+    .service-block-content { padding: 28px 20px; }
+    .service-badge { font-size: 3rem; }
+    .service-block-content h2 { font-size: 1.7rem; }
+    .service-features { grid-template-columns: 1fr; }
+
+    /* PRODUCTS */
+    .products-detailed-grid { grid-template-columns: 1fr; }
+    .product-detailed-card { grid-template-columns: 1fr; }
+    .product-detailed-image { min-height: 200px; }
+
+    /* CONTACT PAGE */
+    .contact-page { padding: 90px 0 50px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .contact-info-card, .contact-form-card { padding: 28px 20px; }
+    .form-group input, .form-group textarea { font-size: 16px; }
+    .map-wrapper iframe { height: 280px; }
+
+    .social-media-grid { gap: 10px; }
+    .social-media-link { padding: 8px 14px; font-size: 0.8rem; }
+
+    /* FOUNDERS */
+    .founders-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    /* FOOTER */
+    .footer { padding: 60px 0 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; padding-bottom: 32px; }
+
+    /* CTA */
+    .cta-section { padding: 60px 0; }
+    .cta-content h2 { font-size: 2rem; }
+    .btn-large { padding: 14px 36px; font-size: 0.9rem; }
+}
+
+/* ========== KÜÇÜK MOBİL (max-width: 480px) ========== */
+@media (max-width: 480px) {
+    .container { padding: 0 14px; }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.1rem; }
+    body { font-size: 13px; }
+
+    .logo-img { width: 40px; height: 40px; }
+    .logo-text { font-size: 1.1rem; }
+
+    /* Çok küçük ekranda hero görsel - merkez biraz daha yukarı */
+    .hero-bg-img { object-position: center 25%; }
+
+    .hero-content h1 { font-size: clamp(1.5rem, 8vw, 1.9rem) !important; }
+    .hero-buttons .btn { padding: 13px 24px; font-size: 0.85rem; }
+
+    .management-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .management-image { min-height: 130px; }
+    .management-card h4 { font-size: 0.8rem; }
+    .management-title-text { font-size: 0.65rem; }
+
+    .project-card { aspect-ratio: 3/2; min-height: 180px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+    .founders-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .founder-card { padding: 24px 14px; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; } /* 1 sütun küçük mobil */
+
+    .contact-flex { padding: 24px 16px; }
+
+    .cta-content h2 { font-size: 1.7rem; }
+
+    .prev-btn { left: -8px; }
+    .next-btn { right: -8px; }
+
+    .hero-stats-inner { padding: 0 8px; }
+    .hero-stat-num { font-size: 1.3rem; }
+
+    .success-message {
+        bottom: 10px; right: 10px; left: 10px;
+        padding: 14px 18px;
+        border-radius: 12px;
+    }
+}
+
+/* ========== LANDSCAPE MOBİL ========== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero { min-height: 100vh; height: 100vh; }
+    .hero-content h1 { font-size: 2rem; margin-bottom: 12px; }
+    .hero-content p { font-size: 0.9rem; margin-bottom: 16px; }
+    .hero-eyebrow { display: none; }
+    .hero-stats { padding: 10px 0; }
+    .hero-stat-num { font-size: 1.2rem; }
+    .page-header { padding: 80px 0 40px; }
+    .nav-menu { top: 56px; max-height: calc(100vh - 56px); }
+}
+
+/* ========== PRİNT ========== */
+@media print {
+    .navbar, .mobile-menu-btn, .scroll-down,
+    .hero-buttons, .btn, .nav-btn, .success-message,
+    .footer, .hero-stats { display: none !important; }
+    .hero { margin-top: 0; }
+    .page-header { margin-top: 0; }
+    body { background: white; color: black; }
+}
