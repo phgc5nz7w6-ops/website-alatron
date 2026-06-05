@@ -1,4 +1,4 @@
-// ALATRON - Ana JavaScript Dosyası
+/* ALATRON - Ana JavaScript Dosyası */
 console.log('ALATRON JS Yüklendi');
 
 /* ================================================================
@@ -417,11 +417,11 @@ function initReferenceSlider() {
 
 // ========== AKTİF SAYFA AYARLAMA ==========
 function setActivePage() {
-   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-// Eğer pathname boşsa index.html olarak ayarla
-if (!currentPage || currentPage === '') {
-    currentPage = 'index.html';
-}
+    let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Eğer pathname boşsa index.html olarak ayarla
+    if (!currentPage || currentPage === '') {
+        currentPage = 'index.html';
+    }
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     navLinks.forEach(link => {
